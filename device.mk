@@ -62,6 +62,10 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.lcd_density=240 \
+    persist.sys.usb.config=mtp,adb
+
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31
 
