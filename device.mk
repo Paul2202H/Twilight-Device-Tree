@@ -62,9 +62,23 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.lcd_density=240 \
-    persist.sys.usb.config=mtp,adb
+ # Fstab
+ro.postinstall.fstab.prefix=/system
+
+# USB MTP
+ro.sys.usb.storage.type=mtp
+
+# Crypto
+ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Gatekeeper
+ro.hardware.gatekeeper=trustonic
+
+# TEE
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_trustonic_tee_support=1
+
+keymaster_ver=4.1
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31
