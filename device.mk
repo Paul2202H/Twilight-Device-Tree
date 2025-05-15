@@ -62,23 +62,13 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
- # Fstab
-ro.postinstall.fstab.prefix=/system
-
-# USB MTP
-ro.sys.usb.storage.type=mtp
-
-# Crypto
-ro.crypto.volume.filenames_mode=aes-256-cts
-
-# Gatekeeper
-ro.hardware.gatekeeper=trustonic
-
-# TEE
-ro.vendor.mtk_tee_gp_support=1
-ro.vendor.mtk_trustonic_tee_support=1
-
-keymaster_ver=4.1
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.postinstall.fstab.prefix=/system \
+    ro.sys.usb.storage.type=mtp \
+    ro.crypto.volume.filenames_mode=aes-256-cts \
+    ro.hardware.gatekeeper=trustonic \
+    ro.vendor.mtk_tee_gp_support=1 \
+    ro.vendor.mtk_trustonic_tee_support=1
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31
